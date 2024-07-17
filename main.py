@@ -43,3 +43,7 @@ def login_user(user: UserLoginSchema = Body(...)):
     if verify_user(user):
         return signJWT(user.email)
     return{"error": "Invalid credentials"}
+
+@app.post("/quote")
+def quote_generate():
+    return{"quote": "this is quote"}
